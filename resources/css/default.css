@@ -2,8 +2,125 @@
     --yellow: rgba(218, 150, 85, 0.95);
 }
 
+h1 {
+    font-size: 3rem;
+}
+
+.non-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.hidden-link {
+    text-decoration: none;
+    color: inherit;
+}
+.yellow-button {
+    background-color: var(--yellow);
+    color: inherit;
+    font-size: 1em;
+    padding: 7px 28px;
+    border: none;
+    border-radius: 2.15em;
+}
+
 #site-wrapper {
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
+#header {
+    background: url(../images/coffee-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    box-sizing: border-box;
+
+    height: 100vh;
+    padding-top: 1em;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+.header__line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* About company */
+#header-about-line {
+    height: 93%;
+    display: flex;
+    align-items: center;
+}
+
+.about-company__title {
+    font-weight: bold;
+    margin-bottom: 0.725em;
+}
+.about-company__description {
+    font-weight: 300;
+    font-size: 0.95em;
+    line-height: 1.1em;
+    margin-bottom: 1.9em;
+    width: 60%;
+}
+#read-more-button {
+    font-size: 1.15em;
+}
+/* /About company */
+
+
+/* Menu */
+.menu-block {
+    display: flex;
+    align-items: center;
+}
+
+.company {
+    display: flex;
+    align-items: center;
+}
+.company__logo {
+    width: 37px;
+    height: 40px;
+}
+.company__name {
+    font-size: 1.5em;
+    margin-left: 0.4em;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__item {
+    font-size: 1.125em;
+    margin-right: 2.1em;
+}
+/* /Menu */
+
+
+/* Media queries */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1224px) {
+    html {
+        font-size: 18px;
+    }
+}
+/* /Media queries */
