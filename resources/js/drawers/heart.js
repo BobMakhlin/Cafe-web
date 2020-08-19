@@ -7,9 +7,8 @@ export default class Heart {
         heart.className = 'heart';
 
         heart.innerHTML = `
-            <div class="heart__outer">
-                <img class="heart__inner heart__inner_non-active" src="resources/images/heart/heart-inner.png" alt="">
-            </div>
+            <span class="far fa-heart heart__outer">
+            <span class="fas fa-heart heart__inner heart__inner_non-active">
         `;
 
         heart.addEventListener('click', async () => {
