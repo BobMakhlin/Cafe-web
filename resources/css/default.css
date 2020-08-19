@@ -1,9 +1,14 @@
 :root {
     --yellow: rgba(218, 150, 85, 0.95);
+    --yellow-dark: rgba(206, 150, 96, 0.9);
+    --brown: #533A20;
 }
 
 h1 {
     font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
 }
 
 .non-selectable {
@@ -28,6 +33,10 @@ h1 {
     padding: 7px 28px;
     border: none;
     border-radius: 2.15em;
+}
+.price::after {
+    content: "$";
+    margin-left: 0.15em;
 }
 
 #site-wrapper {
@@ -109,6 +118,21 @@ h1 {
     margin-right: 2.1em;
 }
 /* /Menu */
+
+/* Heart */
+.heart {
+    width: 35px;
+    height: 32px;
+}
+.heart__outer {
+    background-image: url(../images/heart/heart-outer.png);
+    width: 100%;
+    height: 100%;
+}
+.heart__inner {
+    
+}
+/* /Heart */
 
 
 /* Media queries */
