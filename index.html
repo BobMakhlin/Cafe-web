@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- /Fonts -->
 
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- /Leaflet -->
+
     <link rel="stylesheet" href="resources/css/reset.css">
     <link rel="stylesheet" href="resources/css/default.css">
     <link rel="stylesheet" href="resources/css/my-index.css">
@@ -75,7 +81,7 @@
         </div>
 
         <div id="footer">
-            <!-- <div class="container big">
+            <div class="container big">
 
                 <div class="footer__links">
                     <div class="link-section">
@@ -99,24 +105,33 @@
                         <a href="#" class="link-section__item hidden-link">Contacts</a>
                         <a href="#" class="link-section__item hidden-link">Contacts</a>
                     </div>
-                    <div class="link-section">
+                    <div class="link-section" id="mobile-app-section">
                         <div class="link-section__title">Mobile App</div>
 
-                        <a href="#" class="link-section__item hidden-link">
-                            <img src="resources/images/download-mobile-app/apple-store.png" alt="">
-                        </a>
-                        <a href="#" class="link-section__item hidden-link">
-                            <img src="resources/images/download-mobile-app/google-play.png" alt="">
-                        </a>
+                        <a href="#" class="link-section__item hidden-link">App store</a>
+                        <a href="#" class="link-section__item hidden-link">Google play</a>
                     </div>
+
+                    <p class="footer__copyright">Coffee Shop © 2020</p>
                 </div>
 
-            </div> -->
+                <div id="company-location"></div>
+            </div>
         </div>
 
     </div>
 
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <!-- /Leaflet -->
+
+    <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/4c7e219ab9.js" crossorigin="anonymous"></script>
+    <!-- /Font awesome -->
+
     <script type="module" src="resources/js/my-index.js"></script>
 </body>
 

@@ -72,10 +72,6 @@ h2 {
 #main {
     padding-bottom: 1.6em;
 }
-#footer {
-    padding-top: 1em;
-    background-color: black;
-}
 
 .header__line {
     display: flex;
@@ -165,6 +161,61 @@ h2 {
     opacity: 1;
 }
 /* /Heart */
+
+/* Footer */
+#footer {
+    padding-top: 1.85em;
+    padding-bottom: 1.05em;
+    background-color: black;
+}
+#footer .container {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+.footer__copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    color: rgb(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.footer__links {
+    margin-top: 0.25em;
+    width: 61%;
+    display: flex;
+    justify-content: space-between;
+}
+.link-section__item {
+    display: block;
+    color: rgba(147, 147, 147, 0.52);
+    font-size: 0.95em;
+
+    margin-bottom: 0.5em;
+}
+
+.link-section__title {
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #D0D0D0;
+
+    margin-bottom: 0.8em;
+}
+
+#mobile-app-section .link-section__title {
+    text-align: center;
+}
+
+#company-location {
+    width: 32%;
+    height: 15.9em;
+}
+/* /Footer */
 
 
 /* Media queries */
