@@ -1,12 +1,14 @@
 :root {
     --yellow: rgba(218, 150, 85, 0.95);
+    --yellow-dark: rgba(206, 150, 96, 0.9);
+    --brown: #533A20;
 }
 
 h1 {
     font-size: 3rem;
 }
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .non-selectable {
@@ -32,6 +34,25 @@ h2 {
     border: none;
     border-radius: 2.15em;
 }
+.price::after {
+    content: "$";
+    margin-left: 0.15em;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.container.big {
+    max-width: 950px;
+}
+.container.medium {
+    max-width: 800px;
+}
+.container.small {
+    max-width: 700px;
+}
 
 #site-wrapper {
     font-family: 'Roboto', sans-serif;
@@ -48,12 +69,10 @@ h2 {
     height: 100vh;
     padding-top: 1em;
 }
-.container {
-    width: 100%;
-    height: 100%;
-    max-width: 950px;
-    margin: 0 auto;
+#main {
+    padding-bottom: 1.6em;
 }
+
 .header__line {
     display: flex;
     justify-content: space-between;
@@ -112,6 +131,91 @@ h2 {
     margin-right: 2.1em;
 }
 /* /Menu */
+
+/* Heart */
+.heart {
+    position: relative;
+}
+
+.heart__outer {
+    font-size: 1.5em;
+    color: #8d6741;
+}
+
+.heart__inner {
+    font-size: 0.65em;
+    color: #e30a17;
+
+    /* Place it in the center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: opacity 0.5s linear;
+}
+.heart__inner_non-active {
+    opacity: 0;
+}
+.heart__inner_active {
+    opacity: 1;
+}
+/* /Heart */
+
+/* Footer */
+#footer {
+    padding-top: 1.85em;
+    padding-bottom: 1.05em;
+    background-color: black;
+}
+#footer .container {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+.footer__copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    color: rgb(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.footer__links {
+    margin-top: 0.25em;
+    width: 61%;
+    display: flex;
+    justify-content: space-between;
+}
+.link-section__item {
+    display: block;
+    color: rgba(147, 147, 147, 0.52);
+    font-size: 0.95em;
+
+    margin-bottom: 0.5em;
+}
+
+.link-section__title {
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #D0D0D0;
+
+    margin-bottom: 0.8em;
+}
+
+#mobile-app-section .link-section__title {
+    text-align: center;
+}
+
+#company-location {
+    width: 32%;
+    height: 15.9em;
+}
+/* /Footer */
 
 
 /* Media queries */

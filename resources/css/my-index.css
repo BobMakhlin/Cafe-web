@@ -14,11 +14,61 @@
     border: none;
     height: 2.5px;
     background-color: white;
-
-    width: 40%;
+    width: 35%;
     margin: 0 auto;
     margin-bottom: 1.9em;
 }
+
+/* Drinks */
+
+.drinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.drink {
+    flex-basis: 22%;
+    background-color: var(--yellow-dark);
+    border-radius: 13px;
+    font-weight: bold;
+    padding: 0 1.1em;
+    padding-bottom: 1.5em;
+    box-sizing: border-box;
+}
+
+.drink__img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.3em;
+}
+
+.drink__info-block {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    margin-top: 0.55em;
+    margin-bottom: 0.9em;
+}
+
+.drink__price, .drink__short-description {
+    color: var(--brown);
+}
+
+/* /Drinks */
+
+/* Drink heart */
+
+.drink {
+    position: relative;
+}
+
+.drink .heart {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+}
+
+/* /Drink heart */
 
 /* Latest news */
 .news-blocks {
@@ -47,25 +97,19 @@
     margin-bottom: 0.5em;
 }
 
-.news-blocks .big {
-    height: 228px;
-}
-.news-blocks .medium {
-    height: 205px;
-}
-.news-blocks .small {
-    height: 158px;
-}
-
-.big {
+.news-block.big {
     flex-basis: 100%;
     font-size: 1.35em;
+    height: 228px;
 }
-.medium {
+.news-block.medium {
     flex-basis: 48.5%;
     font-size: 1em;
+    height: 205px;
 }
-.small {
+.news-block.small {
     flex-basis: 31%;
+    font-size: 0.9em;
+    height: 158px;
 }
 /* /Latest news */
