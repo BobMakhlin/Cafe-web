@@ -120,7 +120,7 @@
 
 
 /* Media queries */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
     .drinks {
         flex-direction: column;
     }
@@ -143,6 +143,11 @@
 
         margin: 0 auto;
         margin-top: 1em;
+    }
+}
+@media only screen and (min-width: 480px) {
+    .drink {
+        width: 40%;
     }
 }
 

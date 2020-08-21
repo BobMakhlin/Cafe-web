@@ -269,7 +269,7 @@ h2 {
 
 /* Media queries */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 767px/*480px*/) {
     html {
         font-size: 14px;
     }
@@ -307,7 +307,7 @@ h2 {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px/*768px*/) and (max-width: 1024px) {
     html {
         font-size: 16px;
     }
