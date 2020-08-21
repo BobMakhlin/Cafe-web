@@ -4,13 +4,15 @@ import Heart from './drawers/heart.js';
 import { mapboxKey } from './data/keys.js';
 
 const drinks = document.querySelector('.drinks');
-const companyLocation = document.querySelector('#company-location');
+const navToggle = document.querySelector('.mobile__nav-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
 
 let map = null;
 
 
 initDrinks();
 initMap();
+initMobileMenu();
 
 
 function initDrinks() {
@@ -34,4 +36,10 @@ function initMap() {
         zoomOffset: -1,
         accessToken: mapboxKey
     }).addTo(map);
+}
+function initMobileMenu() {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('fa-times');
+        mobileMenu.classList.toggle('mobile-menu_active')
+    })
 }

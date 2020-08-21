@@ -21,6 +21,10 @@
 
 /* Drinks */
 
+#popular-drinks {
+    margin-bottom: 2em;
+}
+
 .drinks {
     display: flex;
     justify-content: space-between;
@@ -113,3 +117,39 @@
     height: 158px;
 }
 /* /Latest news */
+
+
+/* Media queries */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .drinks {
+        flex-direction: column;
+    }
+    .drink {
+        margin: 0 auto;
+        width: 65%;
+        margin-top: 1em;
+    }
+    .drink img {
+        transform: scale(0.9, 0.9);
+    }
+
+    .news-blocks {
+        flex-direction: column;
+    }
+    .news-block.big, .news-block.medium, .news-block.small {
+        width: 90%;
+        height: 200px;
+        font-size: 1.2em;
+
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1224px) {
+    
+}
+/* /Media queries */
