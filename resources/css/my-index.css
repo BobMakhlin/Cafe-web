@@ -1,5 +1,13 @@
-#main {
+#header {
+    background: url(../images/coffee-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: black;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+#main {
     overflow: hidden;
 }
 

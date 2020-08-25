@@ -64,18 +64,11 @@ h2 {
 
 #site-wrapper {
     font-family: 'Roboto', sans-serif;
+    background-color: black;
     color: white;
-
-    position: relative;
 }
 
 #header {
-    background: url(../images/coffee-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    box-sizing: border-box;
-    height: 100vh;
     padding-top: 1em;
 }
 
@@ -289,7 +282,6 @@ h2 {
 #footer {
     padding-top: 2.6em;
     padding-bottom: 1.05em;
-    background-color: black;
 }
 
 .footer__content {

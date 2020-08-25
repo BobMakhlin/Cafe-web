@@ -1,0 +1,12 @@
+#site-wrapper {
+    height: 100vh;
+}
+
+#header {
+    background-color: black;
+    padding-bottom: 1em;
+}
+
+#main {
+    min-height: 49%;
+}
