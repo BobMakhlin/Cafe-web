@@ -17,7 +17,7 @@ initMobileMenu();
 
 function initDrinks() {
     for (let drinkInfo of fakeDrinksData) {
-        let drinkDrawer = new Drink(drinkInfo.image, drinkInfo.name, drinkInfo.price, drinkInfo.description);
+        let drinkDrawer = new Drink(drinkInfo.image, drinkInfo.name, drinkInfo.description, drinkInfo.prices);
         let heartDrawer = new Heart();
 
         let drinkDiv = drinkDrawer.toHtmlElement();

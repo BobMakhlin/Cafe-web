@@ -2,20 +2,32 @@ let fakeDrinksData = [
     {
         image: 'resources/images/drinks/espresso.png',
         name: 'Espresso',
-        price: 15,
-        description: 'Try coffees from Keniya, Ethiopia'
+        description: 'Try coffees from Keniya, Ethiopia',
+        prices: {
+            smallSize: 1.8,
+            mediumSize: 2,
+            bigSize: null
+        },
     },
     {
         image: 'resources/images/drinks/americano.png',
         name: 'Americano',
-        price: 15,
-        description: 'Try coffees from Keniya, Ethiopia'
+        description: 'Try coffees from Keniya, Ethiopia',
+        prices: {
+            smallSize: 2,
+            mediumSize: 2.35,
+            bigSize: null
+        },
     },
     {
         image: 'resources/images/drinks/latte.png',
         name: 'Latte',
-        price: 15,
-        description: 'Try coffees from Keniya, Ethiopia'
+        description: 'Try coffees from Keniya, Ethiopia',
+        prices: {
+            smallSize: 2,
+            mediumSize: 2.4,
+            bigSize: 2.8
+        },
     },
 ];
 

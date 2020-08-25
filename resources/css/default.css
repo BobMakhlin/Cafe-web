@@ -184,6 +184,74 @@ h2 {
 
 /* /Mobile menu */
 
+/* Drinks */
+
+.drinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.drink {
+    flex-basis: 22%;
+    background-color: var(--yellow-dark);
+    border-radius: 13px;
+    font-weight: bold;
+    padding: 0 1.2em;
+    padding-bottom: 1.5em;
+    box-sizing: border-box;
+}
+.drink hr {
+    margin: 1em -1.2em;
+    background-color: var(--brown);
+
+    border: none;
+    height: 2.5px;
+}
+
+.drink__img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.3em;
+}
+
+.drink__info-block {
+    text-align: center;
+    margin-top: 0.6em;
+}
+.drink__name {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+}
+.drink__short-description {
+    font-size: 1em;
+}
+
+.drink__price, .drink__short-description {
+    color: var(--brown);
+}
+
+.drink-prices {
+    width: 100%;
+}
+.drink-prices td {
+    text-align: center;
+    padding-top: 0.25em;
+    color: var(--brown);
+    width: 33%;
+}
+
+.drink-price-block__img.big {
+    height: 2em;
+}
+.drink-price-block__img.medium {
+    height: 1.8em;
+}
+.drink-price-block__img.small {
+    height: 1.6em;
+}
+
+/* /Drinks */
+
 /* Heart */
 
 .heart {
