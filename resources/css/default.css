@@ -62,6 +62,34 @@ h2 {
     max-width: 700px;
 }
 
+/* Preloader */
+.preloader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1005;
+    
+    background-color: black;
+
+    transition: opacity 2s;
+}
+.preloader_non-active {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.preloader__loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* /Preloader */
+
 /* Parts */
 
 #site-wrapper {

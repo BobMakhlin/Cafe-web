@@ -15,5 +15,12 @@ async function loadJson(url) {
 
     return response.json();
 }
+async function loadImage(url) {
+    return new Promise((res, rej) => {
+        let image = new Image();
+        image.onload = () => res(image);
+        image.src = url;
+    })
+}
 
-export { loadJson, HttpError };
+export { loadJson, loadImage, HttpError };

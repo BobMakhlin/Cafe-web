@@ -1,3 +1,4 @@
+import { loadImage } from '../helpers/loadingHelper.js';
 
 export default class Drink {
     constructor(image, name, description, prices) {
@@ -7,7 +8,7 @@ export default class Drink {
         this.prices = prices;
     }
 
-    toHtmlElement() {
+    async toHtmlElement() {
         let drink = document.createElement('div');
         drink.className = 'drink';
 
@@ -15,10 +16,11 @@ export default class Drink {
         let drinkMediumSize = this.prices.mediumSize ? `$${this.prices.mediumSize}` : '-';
         let drinkSmallSize = this.prices.smallSize ? `$${this.prices.smallSize}` : '-';
 
+        let drinkImage = await loadImage(this.image);
+        drinkImage.className = 'drink__img';
+        drink.append(drinkImage);
 
-        drink.innerHTML = `
-            <img src="${this.image}" alt="" class="drink__img">
-
+        drink.innerHTML += `
             <div class="drink__info-block">
                 <p class="drink__name">${this.name}</p>
                 <p class="drink__short-description">${this.description}</p>

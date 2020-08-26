@@ -3,14 +3,22 @@ import initMap from './initializers/map.js';
 import { loadJson } from './helpers/loadingHelper.js';
 import { cafeDrinksUrl, cafeImagesUrl } from './data/urls.js';
 import Drink from './drawers/drink.js';
+import later from './helpers/later.js';
 
 const drinksContainer = document.querySelector('.drinks');
+const preloader = document.querySelector('.preloader');
 
 
 initMobileMenu();
 const map = initMap('company-location');
-showDrinks();
+window.addEventListener('load', onWindowLoaded);
 
+
+
+async function onWindowLoaded() {
+    await showDrinks();
+    preloader.classList.add('preloader_non-active');
+}
 
 async function showDrinks() {
     let drinks = await loadJson(cafeDrinksUrl);
@@ -19,6 +27,7 @@ async function showDrinks() {
         let imageUrl = `${cafeImagesUrl}/${drink.image}`;
 
         let drinkDrawer = new Drink(imageUrl, drink.name, 'Try coffees from Keniya, Ethiopia', drink.prices);
-        drinksContainer.append(drinkDrawer.toHtmlElement());
+        let drinkDiv = await drinkDrawer.toHtmlElement();
+        drinksContainer.append(drinkDiv);
     }
 }
