@@ -1,0 +1,111 @@
+{{#section 'head'}}
+<link rel="stylesheet" href="./resources/css/my-index.css">
+{{/section}}
+
+<body>
+
+    <div id="header">
+        <div class="container big">
+
+            {{> menu}}
+
+            <div class="header__line" id="header-about-line">
+                <div class="about-company">
+                    <h1 class="about-company__title">Elite Coffee Brands</h1>
+
+                    <p class="about-company__description">Lorem ipsum dolor set ame Lorem ipsum dolor set ame Lorem
+                        ipsum dolor set ame Lorem ipsum dolor set ame Lorem ipsum dolor set ame</p>
+
+                    <button class="yellow-button cursor-pointer" id="read-more-button">Read more</button>
+                </div>
+
+                <div class="coffee-cup-block">
+                    <img src="resources/images/coffee-cup.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main">
+
+        <div id="popular-drinks">
+            <div class="container big">
+
+                <h2 class="main__title">Popular drinks</h2>
+                <hr class="main__line">
+
+                <div class="drinks"></div>
+
+            </div>
+        </div>
+
+        <div id="latest-news">
+            <div class="container big">
+
+                <h2 class="main__title">Latest news</h2>
+                <hr class="main__line">
+
+                <div class="news-blocks">
+
+                    <div class="news-block big">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+
+                    <div class="news-block medium">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+                    <div class="news-block medium">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+
+                    <div class="news-block small">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+                    <div class="news-block small">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+                    <div class="news-block small">
+                        <img class="news-block__img" src="resources/images/news.png" alt="">
+
+                        <div class="news-block__content">
+                            <p class="news-block__date">17 • April</p>
+                            <p class="news-block__description">We are open, Come to us for coffee</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{> footer}}
+
+        <script type="module" src="./resources/js/my-index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c7e219ab9.js" crossorigin="anonymous"></script>
+    <!-- /Fonts -->
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- /Leaflet -->
+
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    {{{_sections.head}}}
+    <link rel="stylesheet" href="./resources/css/default.css">
+</head>
+
+<body>
+    <div id="site-wrapper">
+
+        <div class="preloader">
+            <img src="resources/images/loading/loading.gif" alt="" class="preloader__loading">
+        </div>
+
+        {{{body}}}
+
+        <!-- Leaflet -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+        <!-- /Leaflet -->
+    </div>
+</body>
+
+</html>
