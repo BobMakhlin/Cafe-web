@@ -1,0 +1,23 @@
+{
+  "name": "cafe-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BobMakhlin/Cafe-web.git"
+  },
+  "author": "Bob Makhlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BobMakhlin/Cafe-web/issues"
+  },
+  "homepage": "https://github.com/BobMakhlin/Cafe-web#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
