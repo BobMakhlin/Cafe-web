@@ -1,7 +1,8 @@
 import { loadImage } from '../helpers/loadingHelper.js';
 
 export default class Drink {
-    constructor(image, name, description, prices) {
+    constructor(id, image, name, description, prices) {
+        this.id = id;
         this.image = image;
         this.name = name;
         this.description = description;
@@ -58,6 +59,12 @@ export default class Drink {
             </table>
         `;
 
+        drink.addEventListener('click', this.onDrinkClicked.bind(this));
+
         return drink;
+    }
+
+    async onDrinkClicked(event) {
+        window.location.href = `/catalog/${this.id}`;
     }
 }

@@ -23,7 +23,7 @@ async function onWindowLoaded() {
 
 async function showPopularDrinks() {
     for (let drinkInfo of fakeDrinksData) {
-        let drinkDrawer = new Drink(drinkInfo.image, drinkInfo.name, drinkInfo.description, drinkInfo.prices);
+        let drinkDrawer = new Drink(drinkInfo.id, drinkInfo.image, drinkInfo.name, drinkInfo.description, drinkInfo.prices);
         let heartDrawer = new Heart();
 
         let drinkDiv = await drinkDrawer.toHtmlElement();

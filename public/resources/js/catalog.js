@@ -26,7 +26,7 @@ async function showDrinks() {
     for (let drink of drinks) {
         let imageUrl = `${cafeImagesUrl}/${drink.image}`;
 
-        let drinkDrawer = new Drink(imageUrl, drink.name, 'Try coffees from Keniya, Ethiopia', drink.prices);
+        let drinkDrawer = new Drink(drink.id, imageUrl, drink.name, 'Try coffees from Keniya, Ethiopia', drink.prices);
         let drinkDiv = await drinkDrawer.toHtmlElement();
         drinksContainer.append(drinkDiv);
     }
