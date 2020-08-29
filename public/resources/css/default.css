@@ -103,10 +103,6 @@ h2 {
     padding-top: 1em;
 }
 
-#main {
-
-}
-
 #footer {
     padding-top: 2.6em;
     padding-bottom: 1.6em;
@@ -244,13 +240,12 @@ h2 {
 .drink__img {
     display: block;
     margin: 0 auto;
-    margin-top: 2.3em;
-    width: 202px;
+    width: 100%;
+    max-width: 202px;
 }
 
 .drink__info-block {
     text-align: center;
-    margin-top: 0.6em;
 }
 .drink__name {
     font-size: 1.3em;
