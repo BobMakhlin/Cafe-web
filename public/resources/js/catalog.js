@@ -3,7 +3,6 @@ import initMap from './initializers/map.js';
 import { loadJson } from './helpers/loadingHelper.js';
 import { cafeDrinksUrl, cafeImagesUrl } from './data/urls.js';
 import Drink from './drawers/drink.js';
-import later from './helpers/later.js';
 
 const drinksContainer = document.querySelector('.drinks');
 const preloader = document.querySelector('.preloader');
@@ -26,7 +25,7 @@ async function showDrinks() {
     for (let drink of drinks) {
         let imageUrl = `${cafeImagesUrl}/${drink.image}`;
 
-        let drinkDrawer = new Drink(drink._id, imageUrl, drink.name, 'Try coffees from Keniya, Ethiopia', drink.prices);
+        let drinkDrawer = new Drink(drink._id, imageUrl, drink.name, drink.shortDescription, drink.prices);
         let drinkDiv = await drinkDrawer.toHtmlElement();
         drinksContainer.append(drinkDiv);
     }

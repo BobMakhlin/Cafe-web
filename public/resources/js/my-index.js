@@ -1,29 +1,36 @@
 import Drink from './drawers/drink.js';
-import { fakeDrinksData } from './data/fake-data.js';
 import Heart from './drawers/heart.js';
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
-import later from './helpers/later.js';
+import { loadJson } from './helpers/loadingHelper.js';
+import { cafeImagesUrl, cafeDrinksUrl } from './data/urls.js';
+ 
 
 const drinks = document.querySelector('.drinks');
 const preloader = document.querySelector('.preloader');
 
 initMobileMenu();
 const map = initMap('company-location');
-showPopularDrinks();
 
 window.addEventListener('load', onWindowLoaded);
 
 
 
 async function onWindowLoaded() {
-    await later(1000);
+    await showPopularDrinks();
     preloader.classList.add('preloader_non-active');
 }
 
+async function* getPopularDrinks() {
+    yield await loadJson(`${cafeDrinksUrl}/5f3240039cf1b670d43884c8`);
+    yield await loadJson(`${cafeDrinksUrl}/5f3240039cf1b670d43884c9`);
+    yield await loadJson(`${cafeDrinksUrl}/5f3240039cf1b670d43884ca`);
+}
 async function showPopularDrinks() {
-    for (let drinkInfo of fakeDrinksData) {
-        let drinkDrawer = new Drink(drinkInfo.id, drinkInfo.image, drinkInfo.name, drinkInfo.description, drinkInfo.prices);
+    for await (let drinkInfo of getPopularDrinks()) {
+        let drinkImage = `${cafeImagesUrl}/${drinkInfo.image}`;
+        let drinkDrawer = new Drink(drinkInfo._id, drinkImage, drinkInfo.name, drinkInfo.shortDescription, drinkInfo.prices);
+
         let heartDrawer = new Heart();
 
         let drinkDiv = await drinkDrawer.toHtmlElement();

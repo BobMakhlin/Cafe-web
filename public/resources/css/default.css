@@ -253,8 +253,14 @@ h2 {
 }
 
 .drink__price, .drink__short-description {
-    font-size: 1.05em;
     color: var(--brown);
+}
+.drink__short-description {
+    font-size: 1em;
+    min-height: 3em;
+}
+.drink__price {
+    font-size: 1.05em;
 }
 
 .drink-prices {
