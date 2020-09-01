@@ -1,9 +1,11 @@
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
-import { cafeDrinksUrl } from './data/urls.js';
+import { cafeImagesUrl, cafeDrinksUrl } from './data/urls.js';
 import { loadJson } from './helpers/loadingHelper.js';
+import BuyDrink from './drawers/buy-drink.js';
 
 const preloader = document.querySelector('.preloader');
+const buyDrinkContainer = document.querySelector('.buy-drink-line');
 
 
 initMobileMenu();
@@ -19,8 +21,8 @@ async function onWindowLoaded() {
 async function showDrink() {
     let url = `${cafeDrinksUrl}/${productId}`;
 
-    let drink = await loadJson(url);
-    console.log(drink);
+    let drinkInfo = await loadJson(url);
+    
 }
 
 
