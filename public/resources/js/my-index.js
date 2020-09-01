@@ -5,8 +5,8 @@ import { loadJson } from './helpers/loadingHelper.js';
 import { cafeImagesUrl, cafeDrinksUrl } from './data/urls.js';
 
 import DrinkModel from './components/drink/model.js';
-import DrinkRenderer from './components/drink/renderer.js';
-import HeartRenderer from './components/heart/renderer.js';
+import createDrink from './components/drink/renderer.js';
+import createHeart from './components/heart/renderer.js';
 
 
 const nDrinks = document.querySelector('.drinks');
@@ -42,12 +42,8 @@ async function showPopularDrinks() {
         );
         await drinkModel.init();
 
-
-        let drinkRenderer = new DrinkRenderer();
-        let heartRenderer = new HeartRenderer();
-
-        let nDrink = drinkRenderer.create(drinkModel);
-        let nHeart = heartRenderer.create();
+        let nDrink = createDrink(drinkModel);
+        let nHeart = createHeart();
         nDrink.prepend(nHeart);
 
         nDrinks.append(nDrink);

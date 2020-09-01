@@ -5,7 +5,7 @@ import { loadJson } from './helpers/loadingHelper.js';
 import { cafeDrinksUrl, cafeImagesUrl } from './data/urls.js';
 
 import DrinkModel from './components/drink/model.js';
-import DrinkRenderer from './components/drink/renderer.js';
+import createDrink from './components/drink/renderer.js';
 
 
 const nDrinks = document.querySelector('.drinks');
@@ -38,10 +38,7 @@ async function showDrinks() {
         );
         await drinkModel.init();
 
-
-        let drinkRenderer = new DrinkRenderer();
-        let nDrink = drinkRenderer.create(drinkModel);
-
+        let nDrink = createDrink(drinkModel);
         nDrinks.append(nDrink);
     }
 }
