@@ -1,30 +1,20 @@
-import { loadImage } from '../helpers/loadingHelper.js';
 
-export default class Drink {
-    constructor(id, image, name, description, prices) {
-        this.id = id;
-        this.image = image;
-        this.name = name;
-        this.description = description;
-        this.prices = prices;
-    }
-
-    async toHtmlElement() {
+export default class DrinkRenderer {
+    create(drinkModel) {
         let drink = document.createElement('div');
         drink.className = 'drink';
 
-        let drinkBigSize = this.prices.bigSize ? `$${this.prices.bigSize}` : '-';
-        let drinkMediumSize = this.prices.mediumSize ? `$${this.prices.mediumSize}` : '-';
-        let drinkSmallSize = this.prices.smallSize ? `$${this.prices.smallSize}` : '-';
+        let drinkBigSize = drinkModel.prices.bigSize ? `$${drinkModel.prices.bigSize}` : '-';
+        let drinkMediumSize = drinkModel.prices.mediumSize ? `$${drinkModel.prices.mediumSize}` : '-';
+        let drinkSmallSize = drinkModel.prices.smallSize ? `$${drinkModel.prices.smallSize}` : '-';
 
-        let drinkImage = await loadImage(this.image);
-        drinkImage.className = 'drink__img';
-        drink.append(drinkImage);
+        drinkModel.image.className = 'drink__img';
+        drink.append(drinkModel.image);
 
         drink.innerHTML += `
             <div class="drink__info-block">
-                <p class="drink__name">${this.name}</p>
-                <p class="drink__short-description">${this.description}</p>
+                <p class="drink__name">${drinkModel.name}</p>
+                <p class="drink__short-description">${drinkModel.description}</p>
             </div>
 
             <hr>
@@ -59,12 +49,11 @@ export default class Drink {
             </table>
         `;
 
-        drink.addEventListener('click', this.onDrinkClicked.bind(this));
+        drink.addEventListener('click', event => {
+            window.location.href = `/catalog/${drinkModel.id}`;
+        });
 
         return drink;
     }
-
-    async onDrinkClicked(event) {
-        window.location.href = `/catalog/${this.id}`;
-    }
 }
+

@@ -1,12 +1,15 @@
-import Drink from './drawers/drink.js';
-import Heart from './drawers/heart.js';
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
+
 import { loadJson } from './helpers/loadingHelper.js';
 import { cafeImagesUrl, cafeDrinksUrl } from './data/urls.js';
- 
 
-const drinks = document.querySelector('.drinks');
+import DrinkModel from './components/drink/model.js';
+import DrinkRenderer from './components/drink/renderer.js';
+import HeartRenderer from './components/heart/renderer.js';
+
+
+const nDrinks = document.querySelector('.drinks');
 const preloader = document.querySelector('.preloader');
 
 initMobileMenu();
@@ -28,15 +31,25 @@ async function* getPopularDrinks() {
 }
 async function showPopularDrinks() {
     for await (let drinkInfo of getPopularDrinks()) {
-        let drinkImage = `${cafeImagesUrl}/${drinkInfo.image}`;
-        let drinkDrawer = new Drink(drinkInfo._id, drinkImage, drinkInfo.name, drinkInfo.shortDescription, drinkInfo.prices);
+        let drinkImageUrl = `${cafeImagesUrl}/${drinkInfo.image}`;
 
-        let heartDrawer = new Heart();
+        let drinkModel = new DrinkModel(
+            drinkInfo._id,
+            drinkInfo.name,
+            drinkImageUrl,
+            drinkInfo.shortDescription,
+            drinkInfo.prices
+        );
+        await drinkModel.init();
 
-        let drinkDiv = await drinkDrawer.toHtmlElement();
-        let heartDiv = heartDrawer.toHtmlElement();
-        drinkDiv.prepend(heartDiv);
 
-        drinks.append(drinkDiv);
+        let drinkRenderer = new DrinkRenderer();
+        let heartRenderer = new HeartRenderer();
+
+        let nDrink = drinkRenderer.create(drinkModel);
+        let nHeart = heartRenderer.create();
+        nDrink.prepend(nHeart);
+
+        nDrinks.append(nDrink);
     }
 }

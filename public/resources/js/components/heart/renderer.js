@@ -1,8 +1,8 @@
-import later from '../helpers/later.js';
+import later from '../../helpers/later.js';
 
-export default class Heart {
+export default class HeartRenderer {
 
-    toHtmlElement() {
+    create() {
         let heart = document.createElement('div');
         heart.className = 'heart';
 
@@ -11,7 +11,9 @@ export default class Heart {
             <span class="fas fa-heart heart__inner heart__inner_non-active">
         `;
 
-        heart.addEventListener('click', async () => {
+        heart.addEventListener('click', async (event) => {
+            event.stopPropagation();
+
             let innerHeart = heart.querySelector('.heart__inner');
 
             innerHeart.classList.add('heart__inner_active');

@@ -1,10 +1,14 @@
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
+
 import { loadJson } from './helpers/loadingHelper.js';
 import { cafeDrinksUrl, cafeImagesUrl } from './data/urls.js';
-import Drink from './drawers/drink.js';
 
-const drinksContainer = document.querySelector('.drinks');
+import DrinkModel from './components/drink/model.js';
+import DrinkRenderer from './components/drink/renderer.js';
+
+
+const nDrinks = document.querySelector('.drinks');
 const preloader = document.querySelector('.preloader');
 
 
@@ -22,11 +26,22 @@ async function onWindowLoaded() {
 async function showDrinks() {
     let drinks = await loadJson(cafeDrinksUrl);
 
-    for (let drink of drinks) {
-        let imageUrl = `${cafeImagesUrl}/${drink.image}`;
+    for (let drinkInfo of drinks) {
+        let drinkImageUrl = `${cafeImagesUrl}/${drinkInfo.image}`;
 
-        let drinkDrawer = new Drink(drink._id, imageUrl, drink.name, drink.shortDescription, drink.prices);
-        let drinkDiv = await drinkDrawer.toHtmlElement();
-        drinksContainer.append(drinkDiv);
+        let drinkModel = new DrinkModel(
+            drinkInfo._id,
+            drinkInfo.name,
+            drinkImageUrl,
+            drinkInfo.shortDescription,
+            drinkInfo.prices
+        );
+        await drinkModel.init();
+
+
+        let drinkRenderer = new DrinkRenderer();
+        let nDrink = drinkRenderer.create(drinkModel);
+
+        nDrinks.append(nDrink);
     }
 }
