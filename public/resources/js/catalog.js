@@ -1,11 +1,11 @@
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
 
-import { loadJson } from './helpers/loadingHelper.js';
+import { loadJson, loadImage } from './helpers/loadingHelper.js';
 import { cafeDrinksUrl, cafeImagesUrl } from './data/urls.js';
 
-import DrinkModel from './components/drink/model.js';
 import createDrink from './components/drink/renderer.js';
+import initDrink from './components/drink/initializer.js';
 
 
 const nDrinks = document.querySelector('.drinks');
@@ -26,19 +26,11 @@ async function onWindowLoaded() {
 async function showDrinks() {
     let drinks = await loadJson(cafeDrinksUrl);
 
-    for (let drinkInfo of drinks) {
-        let drinkImageUrl = `${cafeImagesUrl}/${drinkInfo.image}`;
+    for (let item of drinks) {
+        await loadImage(`${cafeImagesUrl}/${item.image}`);
 
-        let drinkModel = new DrinkModel(
-            drinkInfo._id,
-            drinkInfo.name,
-            drinkImageUrl,
-            drinkInfo.shortDescription,
-            drinkInfo.prices
-        );
-        await drinkModel.init();
-
-        let nDrink = createDrink(drinkModel);
+        let nDrink = createDrink(item);
+        initDrink(nDrink, item);
         nDrinks.append(nDrink);
     }
 }

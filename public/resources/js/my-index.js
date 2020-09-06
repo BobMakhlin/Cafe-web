@@ -1,11 +1,11 @@
 import initMobileMenu from './initializers/mobile-menu.js';
 import initMap from './initializers/map.js';
 
-import { loadJson } from './helpers/loadingHelper.js';
+import { loadJson, loadImage } from './helpers/loadingHelper.js';
 import { cafeImagesUrl, cafeDrinksUrl } from './data/urls.js';
 
-import DrinkModel from './components/drink/model.js';
 import createDrink from './components/drink/renderer.js';
+import initDrink from './components/drink/initializer.js';
 import createHeart from './components/heart/renderer.js';
 
 
@@ -30,22 +30,21 @@ async function* getPopularDrinks() {
     yield await loadJson(`${cafeDrinksUrl}/5f3240039cf1b670d43884ca`);
 }
 async function showPopularDrinks() {
-    for await (let drinkInfo of getPopularDrinks()) {
-        let drinkImageUrl = `${cafeImagesUrl}/${drinkInfo.image}`;
+    for await (let item of getPopularDrinks()) {
 
-        let drinkModel = new DrinkModel(
-            drinkInfo._id,
-            drinkInfo.name,
-            drinkImageUrl,
-            drinkInfo.shortDescription,
-            drinkInfo.prices
-        );
-        await drinkModel.init();
+        await loadImage(`${cafeImagesUrl}/${item.image}`);
 
-        let nDrink = createDrink(drinkModel);
-        let nHeart = createHeart();
-        nDrink.prepend(nHeart);
-
+        let nDrink = getDrink(item);
         nDrinks.append(nDrink);
+
     }
+}
+function getDrink(model) {
+    let nDrink = createDrink(model);
+    initDrink(nDrink, model);
+    
+    let nHeart = createHeart();
+    nDrink.prepend(nHeart);
+
+    return nDrink;
 }
