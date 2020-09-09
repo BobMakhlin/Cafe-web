@@ -2,6 +2,7 @@
     --yellow: rgba(218, 150, 85, 0.95);
     --yellow-dark: rgba(206, 150, 96, 0.9);
     --brown: #533A20;
+    --brown-light: #7E572F;
 }
 
 h1 {
@@ -39,6 +40,8 @@ h2 {
     border-radius: 2.15em;
 }
 
+/* Container */
+
 .container {
     width: 100%;
     height: 100%;
@@ -56,6 +59,37 @@ h2 {
 .container.small {
     max-width: 700px;
 }
+
+/* /Container */
+
+
+/* No arrows input */
+
+.no-arrows-input::-webkit-outer-spin-button,
+.no-arrows-input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.no-arrows-input {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/* /No arrows input */
+
+
+/* Price */
+
+.price::before {
+    content: '$';
+}
+.price_unset::before {
+    content: '-';
+}
+
+/* /Price */
+
 
 /* Preloader */
 
@@ -276,13 +310,6 @@ h2 {
     height: 1.7em;
 }
 
-.price::before {
-    content: '$';
-}
-.price_unset::before {
-    content: '-'
-}
-
 /* /Drinks */
 
 /* Heart */
@@ -316,29 +343,6 @@ h2 {
 }
 
 /* /Heart */
-
-/* Number Up Down */
-
-.number-up-down {
-    display: flex;
-    border: 3.25px solid var(--brown);
-    border-radius: 68px;
-    
-    padding: 0.5em 0.6em;
-}
-.number-up-down__text, .drink-details__total-price {
-    font-size: 1.825em;
-    font-weight: bold;
-    color: var(--brown);
-}
-.number-up-down__value {
-    margin: 0 0.7em;
-}
-.number-up-down__plus, .number-up-down__minus {
-    cursor: pointer;
-}
-
-/* /Number Up Down */
 
 /* Footer */
 
@@ -384,6 +388,7 @@ h2 {
 }
 
 /* /Footer */
+
 
 /* Media queries */
 

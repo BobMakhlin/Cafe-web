@@ -1,28 +1,38 @@
 
 export default function initDrinkDetails(component) {
-    const nPlusButton = component.querySelector('.number-up-down__plus');
-    const nMinusButton = component.querySelector('.number-up-down__minus');
-    const nValue = component.querySelector('.number-up-down__value');
+    const nSmallPrice = component.querySelector('.drink-size.small .price');
+    const nSmallCountInput = component.querySelector('.drink-size.small .drink-size__count')
 
-    const nDrinkSizesSelector = component.querySelector('.drink-sizes');
-    const nDrinkPrice = component.querySelector('.drink-details__total-price');
+    const nMediumPrice = component.querySelector('.drink-size.medium .price');
+    const nMediumCountInput = component.querySelector('.drink-size.medium .drink-size__count')
+
+    const nBigPrice = component.querySelector('.drink-size.big .price');
+    const nBigCountInput = component.querySelector('.drink-size.big .drink-size__count');
+
+    const nTotalPrice = component.querySelector('.to-pay__price');
 
 
-    const updateDrinkPriceFn = () => {
-        let count = +nValue.innerText;
-        let price = +nDrinkSizesSelector.getAttribute('selected-price');
-        let totalPrice = price * count;
-        nDrinkPrice.innerText = totalPrice.toFixed(1);
+    const updateTotalPrice = () => {
+        let smallDrinkPrice = +nSmallPrice.innerText || 0;
+        let smallDrinksCount = nSmallCountInput.value;
+
+        let mediumDrinkPrice = +nMediumPrice.innerText || 0;
+        let mediumDrinksCount = nMediumCountInput.value;
+
+        let bigDrinkPrice = +nBigPrice.innerText || 0;
+        let bigDrinksCount = nBigCountInput.value;
+
+        let totalPrice =
+            smallDrinkPrice * smallDrinksCount
+            + mediumDrinkPrice * mediumDrinksCount
+            + bigDrinkPrice * bigDrinksCount;
+
+        nTotalPrice.innerText = Math.round(totalPrice * 100) / 100;
     }
 
-    nPlusButton.addEventListener('click', updateDrinkPriceFn);
-    nMinusButton.addEventListener('click', updateDrinkPriceFn);
 
-
-    const nDrinkSizes = component.querySelectorAll('.drink-size');
-
-    for (let item of nDrinkSizes) {
-        item.addEventListener('click', updateDrinkPriceFn);
-    }
+    nSmallCountInput.addEventListener('input', updateTotalPrice);
+    nMediumCountInput.addEventListener('input', updateTotalPrice);
+    nBigCountInput.addEventListener('input', updateTotalPrice);
 }
 
